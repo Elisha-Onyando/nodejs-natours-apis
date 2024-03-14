@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+        p Forgot your password? Submit a reset request with your new password to #{url}
+        p Your password reset token is valid for only 10 minutes!
+        p (Website for this action is not yet implemented)
+        table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+                tr
+                    td(align='left')
+                        table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                            tbody
+                                tr
+                                    td
+                                        a(href=`${url}`, target='_blank') Reset your password
+        p If you didn't forget your password, please ignore this email!
