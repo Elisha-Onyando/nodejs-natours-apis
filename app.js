@@ -9,6 +9,7 @@ const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const compression = require('compression');
 
 const AppError = require('./utilities/appErrors');
 const globalErrorHandler = require('./controllers/errorController');
@@ -79,6 +80,8 @@ app.use(
         ]
     })
 );
+
+app.use(compression());
 
 // Test middleware
 app.use((req, res, next) => {
